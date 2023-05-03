@@ -2,6 +2,7 @@ package net.ictcampus.mobapp_trading_sim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference= FirebaseDatabase.getInstance().getReference();
 
-        TextView username = (TextView) findViewById(R.id.username);
-        TextView password = (TextView) findViewById(R.id.password);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView username = (TextView) findViewById(R.id.username);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView password = (TextView) findViewById(R.id.password);
 
-        MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
 
     }
 }

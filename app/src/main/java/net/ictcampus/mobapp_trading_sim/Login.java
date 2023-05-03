@@ -48,14 +48,20 @@ public class Login extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username, password;
-                username = String.valueOf(username.getText());
-                password = String.valueOf(password.getText());
-                if (TextUtils.isEmpty(username)) {
+                
+                String.valueOf(username.getText());
+                String.valueOf(password.getText());
+                if (TextUtils.isEmpty(username.getText().toString())) {
                     Toast.makeText(Login.this, "Enter Username", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-                if (TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(password.getText().toString())) {
+                    Toast.makeText(Login.this, "Enter Password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(loginbtn.getText().toString())) {
                     Toast.makeText(Login.this, "Enter Password", Toast.LENGTH_SHORT).show();
                     return;
                 }
