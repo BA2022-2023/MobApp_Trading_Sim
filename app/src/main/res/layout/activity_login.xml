@@ -76,10 +76,11 @@
         android:id="@+id/registerNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_below="@+id/loginbtn"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="15dp"
+        tools:ignore="TextSizeCheck"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="60dp"
         tools:text="Register now" />
