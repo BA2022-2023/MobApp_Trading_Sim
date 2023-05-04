@@ -70,7 +70,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/edittext"
-        android:text="LOGIN" />
+        android:text="LOGIN"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/registerNow"

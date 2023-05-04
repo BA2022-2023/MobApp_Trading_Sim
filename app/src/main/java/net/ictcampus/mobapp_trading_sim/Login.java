@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
-        loginbtn = findViewById(R.id.loginbtn);
+        MaterialButton loginbtn = findViewById(R.id.loginbtn);
         textView = findViewById(R.id.registerNow);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,15 +54,11 @@ public class Login extends AppCompatActivity {
                 if (TextUtils.isEmpty(username.getText().toString())) {
                     Toast.makeText(Login.this, "Enter Username", Toast.LENGTH_SHORT).show();
                     return;
-                }
-
-                if (TextUtils.isEmpty(password.getText().toString())) {
+                } else if (TextUtils.isEmpty(password.getText().toString())) {
                     Toast.makeText(Login.this, "Enter Password", Toast.LENGTH_SHORT).show();
                     return;
-                }
-
-                if (TextUtils.isEmpty(loginbtn.getText().toString())) {
-                    Toast.makeText(Login.this, "Enter Password", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(Login.this, "logged in", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
