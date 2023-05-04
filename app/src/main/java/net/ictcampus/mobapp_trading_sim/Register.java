@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,13 +28,13 @@ public class Register extends AppCompatActivity {
 
     ProgressBar progressBar;
     FirebaseAuth mAuth;
-    @SuppressLint("WrongViewCast")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        String email = findViewById(R.id.username).toString();
-        String password = findViewById(R.id.password).toString();
+        final EditText email = findViewById(R.id.username);
+        final EditText password = findViewById(R.id.password);
         buttonReg = findViewById(R.id.registerbtn);
 
 
@@ -52,22 +53,23 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(R.layout.activity_register.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(R.layout.activity_register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.GONE);
-                        mAuth.createUserWithEmailAndPassword(email, password);
+        mAuth.createUserWithEmailAndPassword(email, password) {
+            addOnCompleteListener(R.layout.activity_register.this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    Toast.makeText(R.layout.activity_register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    mAuth.createUserWithEmailAndPassword(email, password);
 
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(R.layout.activity_register.this, "Authentication failed." + task.getException(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            startActivity(new Intent(Activity_register.this, MainActivity.class));
-                            finish();
-                        }
+                    if (!task.isSuccessful()) {
+                        Toast.makeText(R.layout.activity_register.this, "Authentication failed." + task.getException(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        startActivity(new Intent(Activity_register.this, MainActivity.class));
+                        finish();
                     }
-                });
-    }
+                }
+            });
+        }
 
-//}
+    }
+}
