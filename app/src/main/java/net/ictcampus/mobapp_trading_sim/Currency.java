@@ -7,9 +7,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+
 public class Currency extends AppCompatActivity {
         TextView tv_lat,tv_lon,tv_altitude,tv_speed,tv_sensor,tv_updates,tv_address;
         Switch sw_locationupdates, sw_gps;
+
+        boolean updateOn = false;
+
+        LocationRequest locationRequest;
+        FusedLocationProviderClient fusedLocationProvider;
+
+
         @Override
         protected void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -25,8 +35,9 @@ public class Currency extends AppCompatActivity {
             sw_gps = findViewById(R.id.sw_gps);
             sw_locationupdates = findViewById(R.id.sw_locationsupdates);
 
-
-
+            locationRequest = new LocationRequest();
+            locationRequest.setInterval(1000 * 30);
+            locationRequest.setFastestInterval(1000 * 5);
         }
 
 }
