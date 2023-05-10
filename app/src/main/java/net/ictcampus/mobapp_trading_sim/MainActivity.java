@@ -1,6 +1,7 @@
 package net.ictcampus.mobapp_trading_sim;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mCountryTextView;
     private TextView mCoordinatesTextView;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
