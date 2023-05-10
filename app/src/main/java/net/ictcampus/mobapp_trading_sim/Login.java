@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
                     return;
                 }else {
                     Toast.makeText(Login.this, "logged in", Toast.LENGTH_SHORT).show();
-                    setContentView(R.layout.activity_currency);
+                    setContentView(R.layout.activity_main);
                     return;
                 }
             }
