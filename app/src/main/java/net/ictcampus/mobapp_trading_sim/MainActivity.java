@@ -10,6 +10,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
         if (location != null) {
             String country = getCountryFromLocation(location);
             mCountryTextView.setText(country);
-            String coordinates = location.getLatitude() + ", " + location.getLongitude();
+            String coordinates = location.getLatitude() + " , " + location.getLongitude();
             mCoordinatesTextView.setText(coordinates);
         }
+
     }
 
 
@@ -88,30 +91,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     // Berechtigungsanforderung verarbeiten
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 1: {
-// Wenn die Anforderung abgebrochen wurde, wird das Ergebnis-Array leer sein.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == 1) {// Wenn die Anforderung abgebrochen wurde, wird das Ergebnis-Array leer sein.
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 // Berechtigung erteilt, GPS-Koordinaten abrufen und Land bestimmen
-                    Location location = getLocation();
-                    if (location != null) {
-                        String country = getCountryFromLocation(location);
-                        mCountryTextView.setText(country);
-                        String coordinates = location.getLatitude() + ", " + location.getLongitude();
-                        mCoordinatesTextView.setText(coordinates);
-                    }
-                } else {
-// Berechtigung verweigert, Benutzer benachrichtigen und App schließen
-                    Log.d("MainActivity", "Permission denied");
-                    mCountryTextView.setText("Permission denied");
-                    mCoordinatesTextView.setText("Permission denied");
-                    finish();
+                Location location = getLocation();
+                if (location != null) {
+                    String country = getCountryFromLocation(location);
+                    mCountryTextView.setText(country);
+                    String coordinates = location.getLatitude() + ", " + location.getLongitude();
+                    mCoordinatesTextView.setText(coordinates);
                 }
-                return;
+            } else {
+// Berechtigung verweigert, Benutzer benachrichtigen und App schließen
+                Log.d("MainActivity", "Permission denied");
+                mCountryTextView.setText("Permission denied");
+                mCoordinatesTextView.setText("Permission denied");
+                finish();
             }
         }
     }

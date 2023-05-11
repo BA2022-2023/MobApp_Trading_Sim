@@ -71,7 +71,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/edittext"
         android:text="LOGIN"
-        android:onClick="onClick"/>
+        android:onClick="MainActivity"/>
 
     <TextView
         android:id="@+id/registerNow"
