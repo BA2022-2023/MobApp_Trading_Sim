@@ -14,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private DBHelper dbHelper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         usernameEditText = findViewById(R.id.username);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginbtn);
+
 
         dbHelper = new DBHelper(getApplicationContext());
 
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
