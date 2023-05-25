@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"><LinearLayout
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Forex Trading Currency Pairs"
+        android:text="@string/forex_trading_currency_pairs"
         android:textColor="@color/white"
         android:textSize="24sp" />
 
@@ -32,7 +33,7 @@
                 android:layout_width="278dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Your current country:"
+                android:text="@string/your_current_country"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,7 @@
                 android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Latitude: XX.XXXXXX\nLongitude: XX.XXXXXX"
+                android:text="@string/latitude_xx_xxxxxx_nlongitude_xx_xxxxxx"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,63 +56,70 @@
                 android:id="@+id/chfusd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/switzerland"
+                android:drawableStart="@drawable/switzerland"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="CHF/USD" />
+                android:text="@string/chf_usd"
+                tools:ignore="VisualLintButtonSize" />
             <Button
                 android:id="@+id/eurusd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/germany"
+                android:drawableStart="@drawable/germany"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="EUR/USD" />
+                android:text="@string/eur_usd"
+                tools:ignore="VisualLintButtonSize" />
 
 
             <Button
                 android:id="@+id/usd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/usa"
+                android:drawableStart="@drawable/usa"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="USD" />
+                android:text="@string/usd"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/cadusd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/canada"
+                android:drawableStart="@drawable/canada"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="CAD/USD" />
+                android:text="@string/cad_usd"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/audusd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/australia"
+                android:drawableStart="@drawable/australia"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="AUD/USD" />
+                android:text="@string/aud_usd"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/tryusd_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/turkey"
+                android:drawableStart="@drawable/turkey"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:text="TRY/USD" />
+                android:text="@string/try_usd"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/gotologin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:text="Login"
-                android:onClick="MainActivity"/>
+                android:onClick="MainActivity"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </ScrollView>

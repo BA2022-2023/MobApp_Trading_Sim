@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity", "Permission denied");
                 mCountryTextView.setText("Permission denied");
                 mCoordinatesTextView.setText("Permission denied");
-                finish();
+                setContentView(R.layout.activity_main2);
             }
         }
     }

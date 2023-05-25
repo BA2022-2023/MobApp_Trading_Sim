@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Trading Sim</string>
+    <string name="Username">Username</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="forex_trading_currency_pairs">Forex Trading Currency Pairs</string>
+    <string name="your_current_country">Your current country:</string>
+    <string name="latitude_xx_xxxxxx_nlongitude_xx_xxxxxx">Latitude: XX.XXXXXX\nLongitude: XX.XXXXXX</string>
+    <string name="chf_usd">CHF/USD</string>
+    <string name="eur_usd">EUR/USD</string>
+    <string name="usd">USD</string>
+    <string name="cad_usd">CAD/USD</string>
+    <string name="aud_usd">AUD/USD</string>
+    <string name="try_usd">TRY/USD</string>
+    <string name="username">Username</string>
+    <string name="register">REGISTER</string>
 </resources>

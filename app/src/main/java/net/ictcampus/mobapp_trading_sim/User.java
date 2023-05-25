@@ -1,51 +1,36 @@
 package net.ictcampus.mobapp_trading_sim;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName="user")
 public class User {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="user_id")
+    @NonNull
     public int uid;
 
     @ColumnInfo(name = "first_name")
+    @NonNull
     public String firstName;
 
     @ColumnInfo(name = "last_name")
+    @NonNull
     public String lastName;
 
     @ColumnInfo(name = "username")
+    @NonNull
     String username;
     @ColumnInfo(name = "password")
+    @NonNull
     String password;
-
-    public User() {
-        //Empty Constructor For Firebase
-    }
 
 
     public User(String username, String password)
     {
         this.username = username; //Parameterized for Program-Inhouse objects.
-        this.password = password;
-    }
-
-    //Getters and Setters
-    public String getUsername()
-    {
-        return username;
-    }
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
-    public String getPassword()
-    {
-        return password;
-    }
-    public void setPassword(String password)
-    {
         this.password = password;
     }
 }

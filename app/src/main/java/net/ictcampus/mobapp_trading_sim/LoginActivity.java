@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText usernameEditText, passwordEditText;
-    private Button loginButton;
+
+
     private DBHelper dbHelper;
 
 
@@ -20,9 +20,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = findViewById(R.id.username);
-        passwordEditText = findViewById(R.id.password);
-        loginButton = findViewById(R.id.loginbtn);
+        EditText usernameEditText = findViewById(R.id.username);
+        EditText passwordEditText = findViewById(R.id.password);
+        Button loginButton = findViewById(R.id.loginbtn);
 
 
         dbHelper = new DBHelper(getApplicationContext());
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = passwordEditText.getText().toString();
                 boolean isLoggedIn = dbHelper.checkUser(username, password);
                 if (isLoggedIn) {
-                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_SHORT).show();
+                    setContentView(R.layout.activity_main);
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
                 }
