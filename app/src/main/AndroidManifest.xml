@@ -18,6 +18,9 @@
         android:theme="@style/Theme.MobApp_Trading_Sim"
         tools:targetApi="31">
         <activity
+            android:name="RegisterActivity"
+            android:label="Register" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
